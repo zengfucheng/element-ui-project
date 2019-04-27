@@ -1,0 +1,8 @@
+导出一份 vue cli 3.0 的配置文件 供查看
+vue inspect > output.js
+
+other
+vue inspect --plugin [name]     // 查看单条插件规则 如： copy
+vue inspect --plugins           // 查看全部插件规则
+
+// 其他的，都类似
