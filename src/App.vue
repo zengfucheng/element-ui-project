@@ -15,13 +15,14 @@
         <!--<svg-icon icon-class="bug"></svg-icon>-->
         <!--<svg-icon icon-class="bug"></svg-icon>-->
         <!--<svg-icon icon-class="bug"></svg-icon>-->
-        <!--<svg-icon icon-class="bug"></svg-icon>-->
+        <svg-icon icon-class="bug"></svg-icon>
         <img src="static/images/404.svg"/>
     </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue';
+    import HelloWorld from '@/views/HelloWorld.vue';
+    import axios from 'axios';
 
     export default {
         name: 'app',
@@ -29,8 +30,28 @@
             HelloWorld
         },
         created() {
-            let names = 'zfc1';
+            let obj = 123;
+            let names = 'zfc';
             console.log(names);
+            this.mesgPush();
+        },
+        methods: {
+            mesgPush() {
+                let jsonObj = {
+                    msgType: 'msg0011',
+                    msg: '召唤邓光辉经理'
+                };
+                axios.post(
+                    'http://agree.acaas-gateway:31080/abside/mo-ownservices-msg/webSocket',
+                    {
+                        Scope:'0',
+                        BranchNo:'2039',
+                        AppNum:'LMHTS234',
+                        UserNum:'931102',
+                        MsgNotn:JSON.stringify(jsonObj)
+                    }
+                );
+            }
         }
     };
 </script>

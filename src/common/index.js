@@ -7,5 +7,4 @@
  *
  */
 
-import '../plugins/element'   // 引入elmentUI 配置
 

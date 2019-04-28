@@ -1,3 +1,12 @@
+/**
+ *
+ * name: index
+ * date: 2019/4/17
+ * author: cengfucheng
+ * about: 处理svg图标
+ *
+ */
+
 import Vue from 'vue'
 import SvgIcon from '@/components/SvgIcon'// svg组件
 

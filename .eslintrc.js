@@ -28,9 +28,13 @@ module.exports = {
         "no-undef-init": 2,//变量初始化时不能直接给它赋值为undefined
 
 
-        "quotes": [2, "single"], //引号风格
+        "no-unused-vars": 'off',//不能有声明后未被使用的变量或参数
+        // "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
+
+        "quotes": [2, "single"], //引号风格 , 使用 单引号
         // "indent": [2,4],
         // "indent": 0,
+        // "indent": 'off',
         "vue/script-indent": ["error", 4, { "baseIndent": 1, "switchCase": 1, }],
         // 'vue/script-indent': ['error', 2, {'baseIndent': 1}],
         // 'vue/script-indent': [
@@ -42,10 +46,11 @@ module.exports = {
         // ],
 
 
+        "use-isnan": 2,//禁止比较时使用NaN，只能用isNaN()
         "no-with": 2,//禁用with
 
         // es6
-        "no-var": 2,
+        "no-var": 2,  // 禁用 var 语句
     },
     overrides:[
         {

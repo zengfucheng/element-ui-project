@@ -25,6 +25,7 @@ const router = require('./router/');
 
 const app = new Koa();
 
+// 白名单域名
 const whiteList = [
     'http://localhost:3000',
     'http://localhost:3001',
@@ -41,6 +42,7 @@ app.use(KoaCors({
         // return '*';
     },
     origin(ctx) {
+        // 只允许白名单域名访问本域～～
         if(whiteList.includes(ctx.request.header.origin)){
             return ctx.request.header.origin;
         }
@@ -48,9 +50,9 @@ app.use(KoaCors({
     },
     exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
     maxAge: 5,
-    credentials: true,
-    allowMethods: ['GET', 'POST', 'DELETE', 'PUT'],
-    allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    credentials: true,              // 是否携带cookie
+    allowMethods: ['GET', 'POST', 'DELETE', 'PUT'],         // 请求类型
+    allowHeaders: ['Content-Type', 'Authorization', 'Accept'],      // 请求头
 
 }));
 
@@ -64,11 +66,6 @@ app.use(KoaStatic(path.join(__dirname,'web'))); //静态文件夹，整个前端
 
 app.use(router.routes());
 app.use(router.allowedMethods());
-
-// http.createServer(app)
-// app.listen(3000);
-// console.log('Server running at http://127.0.0.1:8888/');
-
 
 //socket demo
 // let socketServer = ws.createServer( (connect) => {
