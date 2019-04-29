@@ -1,11 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import store from "@/store";
 
-import './common';
+import '@/common';        // 公共方法
+import '@/components';     // 公共组件
 
-import './icons';       // 导入svg图标.
 
 Vue.config.productionTip = false;
 
