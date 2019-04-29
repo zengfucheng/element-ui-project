@@ -31,7 +31,7 @@ module.exports = {
         "no-unused-vars": 'off',//不能有声明后未被使用的变量或参数
         // "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
 
-        "quotes": [2, "single"], //引号风格 , 使用 单引号
+        "quotes": [2, "single", "avoid-escape"], //引号风格 , 使用 单引号
         // "indent": [2,4],
         // "indent": 0,
         // "indent": 'off',
