@@ -40,11 +40,9 @@
             })
         },
         created() {
-            let obj = 123;
-            let names = 'zfc';
-            console.log(names);
-
             console.log('数据库',this.$store);
+            // this.$store.commit('SET_TOKEN','zfc-names');     // 同步直接修改状态
+            this.$store.dispatch('Logins',{token:'cnm'});       // 异步修改状态
             this.mesgPush();
         },
         methods: {

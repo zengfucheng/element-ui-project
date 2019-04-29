@@ -6,6 +6,7 @@
  * about:
  *
  */
+const path = require('path');
 const router = require('koa-router')();
 
 // const rg = require('superagent');
@@ -32,7 +33,7 @@ router.get('home', (ctx, next) => {
 
     // 返回vue项目打包文件
     ctx.response.type = 'html';
-    ctx.response.body = fs.createReadStream('./web/index.html')
+    ctx.response.body = fs.createReadStream(path.resolve('./web/index.html'))
 
     // next();
 });

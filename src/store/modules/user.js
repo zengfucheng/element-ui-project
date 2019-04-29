@@ -18,6 +18,14 @@ export default {
     mutations: {
         SET_TOKEN: (state, payload) => {
             state.token = payload;
+        },
+        SET_USERNAME: (state, payload) => {
+            state.userName = payload;
+        }
+    },
+    actions: {
+        Logins: ({commit, state}, payload) => {
+            commit('SET_TOKEN',payload.token);
         }
     }
 }
